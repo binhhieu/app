@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js" defer="js.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <marquee class="header-name">
+            <img style="width: 100px;height: 100px;float: left;margin-right: 20px;padding-bottom: 5px;border-radius: 5px;"
+                class="header-image" src="./hieu.png">
+            SINH VIÊN THỰC HIỆN
+            <br>MÃ SINH VIÊN
+            <br>Lớp
+            <br>GIẢNG VIÊN HƯỚNG DẪN
+            <div style="float: right;top:0px;left:360px;position: absolute;">
+                : NGUYỄN BỈNH HIẾU<br>
+                : B17DCDT073<br>
+                : DTMT1<br>
+                : NGUYỄN NGỌC MINH
+            </div>
+        </marquee>
+    </div>
+
+    <h1>
+        Quiz App
+    </h1>
+    <div id="time"></div>
+
+    <div class="quiz-container">
+        <div id="quiz"></div>
+    </div>
+    <button id="previous">Previous Question</button>
+    <button id="next">Next Question</button>
+    <button id="submit">Submit Quiz</button>
+    <div id="results"></div>
+    <script>
+        function dongho() {
+            var time = new Date();
+            var gio = time.getHours();
+            var phut = time.getMinutes();
+            var giay = time.getSeconds();
+            if (gio < 10) {
+                gio = "0" + gio;
+            }
+            if (phut < 10) {
+                phut = "0" + phut;
+            }
+            if (giay < 10) {
+                giay = "0" + giay;
+            }
+            document.getElementById("time").innerHTML = gio + ":" + phut + ":" + giay;
+            setTimeout("dongho()", 1000);
+        }
+        dongho();
+
+    </script>
+</body >
+
+</html >
