@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+
+body{
+	font-size: 20px;
+	font-family: 'Work Sans', sans-serif;
+	color: #333;
+    font-weight: 300;
+    text-align: center;
+    background-color: #f8f6f0;
+    position: relative;
+    background-image: linear-gradient(to bottom right, rgb(120, 8, 148), yellow);
+}
+.header-name{
+    border-bottom:3px solid #000;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+    
+}
+h1{
+    font-weight: 1000;
+    margin-top: 30px;
+    padding: 10px;
+    color: #fff;
+}
+.question{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.answers {
+    margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+}
+.answers label{
+    display: block;
+    margin-bottom: 10px;
+}
+button{
+    font-family: 'Work Sans', sans-serif;
+	font-size: 20px;
+	background-color:#ccc;
+	color: #000;
+	border: 0px;
+	border-radius: 5px;
+	padding: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+    margin-top: 280px;
+    
+}
+/* @media all and (max-width: 320px) {
+    button {
+        margin-bottom: 20px;
+    margin-top: 280px;
+    }
+ } */
+button:hover{
+	background-color: rgb(140, 140, 140);
+    color: #fff;
+}
+.slide{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.active-slide{
+    opacity: 1;
+    z-index: 2;
+}
+.quiz-container{
+    position: relative;
+    height: 200px;
+    margin-top: 40px;
+    border: 1px solid #000;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+.quiz-container{
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    border-bottom: none;
+
+}
+#quiz{
+    color: #fff;
+}
+#time{
+    font-weight: 600;
+    font-size: 30px;
+    color: #ccc;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    bottom:350px;
+    transform: translate(-65%);
+    opacity: 0.5;
+}
+
+  
+  
