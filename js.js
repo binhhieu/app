@@ -14,7 +14,7 @@
         // and for each available answer...(và cho mỗi câu trả lời có sẵn ...)
         for(letter in currentQuestion.answers){
 
-          // ...add an HTML radio button(thêm nút radio HTML)
+          // ...add an HTML radio button(thêm nút nhấn vào HTML)
           answers.push(
             `<label>
               <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -35,42 +35,42 @@
     );
 
     // finally combine our output list into one string of HTML and put it on the page
-    //(cuối cùng kết hợp danh sách đầu ra của chúng tôi thành một chuỗi HTML và đặt nó trên trang)
+    //( kết hợp danh sách đầu ra của chúng tôi thành một chuỗi HTML và đặt nó trên trang)
     quizContainer.innerHTML = output.join('');
   }
 
   function showResults(){
 
-    // gather answer containers from our quiz (thu thập các thùng chứa câu trả lời từ bài kiểm tra )
+    // gather answer containers from our quiz (thu thập các câu trả lời từ bài kiểm tra )
     const answerContainers = quizContainer.querySelectorAll('.answers');
 
-    // keep track of user's answers (theo dõi câu trả lời của người dùng)
+    // keep track of user's answers (theo dõi câu trả lời)
     let numCorrect = 0;
 
     // for each question...(cho mỗi câu hỏi.)
     myQuestions.forEach( (currentQuestion, questionNumber) => {
 
-      // find selected answer(tìm câu trả lời đã chọn)
+      // tìm câu trả lời đã chọn
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-      // if answer is correct (nếu câu trả lời là đúng)
+      // nếu câu trả lời là đúng
       if(userAnswer === currentQuestion.correctAnswer){
-        // add to the number of correct answers (thêm vào số câu trả lời đúng)
+        //thêm vào số câu trả lời đúng
         numCorrect++;
 
-        // color the answers green (tô màu cho câu trả lời màu xanh lá cây)
+        // color the answers green (tô màu cho câu trả lời màu xanh lá )
         answerContainers[questionNumber].style.color = 'lightgreen';
       }
       // if answer is wrong or blank (nếu câu trả lời sai hoặc trống)
       else{
-        // color the answers red(thì tô màu đỏ)
+        // color the answers red
         answerContainers[questionNumber].style.color = 'red';
       }
     });
 
-    // show number of correct answers out of total(hiển thị số câu trả lời đúng trong tổng số)
+    // hiển thị số câu trả lời đúng 
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
   }
 
@@ -102,7 +102,7 @@
     showSlide(currentSlide - 1);
   }
 
-  // Variables(biến)
+  // biến
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
@@ -218,10 +218,10 @@
   const slides = document.querySelectorAll(".slide");
   let currentSlide = 0;
 
-  // Show the first slide(Hiển thị trang trình bày đầu tiên)
+  // Show the first slide(Hiển thị câu hỏi đầu)
   showSlide(currentSlide);
 
-  // Event listeners(Người nghe sự kiện)
+  // Event listeners( nghe sự kiện xảy ra)
   submitButton.addEventListener('click', showResults);
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
